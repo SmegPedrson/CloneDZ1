@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Простой HTML-документ</title>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <body>
     <h1>Добро пожаловать на мой сайт</h1>
-    <p>Это пример простого HTML-документа.</p>
-    <text>Автор странички - Олеся</text>
+    <h2>Автор - Максим<h2>
+    <div class="pasteHere">
+        <p id="fileTextHere">text from C:\Clonee\FMSH\prost.txt </p>
+    </div>
+    <script>
+        $('#fileTextHere').load("C:\Clonee\FMSH\prost.txt");
+    </script>
 </body>
 </html>
