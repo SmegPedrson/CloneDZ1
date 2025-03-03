@@ -1,12 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Простой HTML-документ</title>
+    <title>Прикольная информация</title>
+    <style type="text/css">
+        textarea {resize: vertical;}
+
+        a:link {color:#01b11e}
+        a:visited {color:#026e12}
+
+        a {text-decoration: none;} 
+        a:hover {text-decoration: underline;} 
+    </style>
 </head>
+
 <body>
-    <h1>Добро пожаловать на мой сайт</h1>
-    <h2>Автор - Максим<h2>
+
+    <main>
+    <h2>Выставка интересных еженедельных работ из <a href="https://www.desmos.com" target="_blank"><img src="https://avatars.mds.yandex.net/i?id=e6dcf3f4bf1b959ab46359885e27cc32_sr-4615436-images-thumbs&n=13" alt="desmos" width="25" height="25"hspace="5"></a></h2>
+        
+        <h3>Невероятные графики с <a href="https://www.desmos.com/art" target="_blank">Art Expo 2024</a></h3>
+        <ul>
+            <li><a href="https://www.desmos.com/calculator/bkpsugnufn" target="_blank">“Pintograph” от HuiBeom Kim</a></li>
+            <li><a href="https://www.desmos.com/calculator/yclweenaqq" target="_blank">“Where the wind takes me” от Sofia Monarchi</a></li>
+            <li><a href="https://www.desmos.com/calculator/db1dkewi9x" target="_blank">“Desmos Snake” от Zane Fares</a></li>
+            <li><a href="https://www.desmos.com/3d/zgmsvhci9q?lang=ru" target="_blank">“Graphic Decay” от ronwnor</a></li>
+        </ul>
+        <h3>Мои глупенькие графики</h3>
+        <ul>
+            <li><a href="https://www.desmos.com/Calculator/vf5t7xvcfz" target="_blank">Клевер</a></li>
+            <li><a href="https://www.desmos.com/3D/5jj8no6ena" target="_blank">Тыква</a></li>
+            <li><a href="https://www.desmos.com/3D/w6ei9lalhh" target="_blank">Виноград</a></li>
+            <li><a href="https://www.desmos.com/3D/51qvuidizo" target="_blank">Прикольный узор</a></li>
+        </ul>
+        <br>
+    <h2>Сообщите об ошибке или предложите дополнения к сайту</h2>
+
+    <form>
+        <p><textarea cols="84" rows="3" charswidth="23" name="mesengtxt"></textarea></p>
+        <div>
+            <div>
+            <label for="numberCard" >Номер банковской карты</label>
+            <input type="number" id="numberCard" name="numberCard" required>
+            </div>
+            
+            <label for="DataCard" > Действительна до</label>
+            <input type="date" id="DataCard" name="DataCard" required>
+            
+            <label for="CVV"> CVV/CVC</label>
+            <input type="password" id="CVV" name="CVV" required>
+        </div>
+        <div>
+            <!-- добавляем кнопку -->
+            <button type="submit">Отправить</button>
+        </div>
+        <br>
+    </form>
+</main>    
+
+    <footer> 
+        <p> 03.03.2025 Моя учебная веб-страница</p>
+    </footer>
+
 </body>
 </html>
