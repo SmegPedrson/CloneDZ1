@@ -1,0 +1,71 @@
+body{
+  font-size: 20px;
+}
+
+textarea {resize: vertical;}
+
+a:link {color: #02b01f;}
+
+a:visited {color: #048718;}
+
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
+
+.grayTable{
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    background-color: #f2f2f2;
+}
+
+tr.graytr> td, td.graytr {
+    background-color: #ffffff;
+    font-size: 16px;
+    border: 1px solid #000;
+    padding: 8px;
+  }
+  tr.grayhe> th, th.grayhe{
+    border: 1px solid #000;
+    padding: 8px;
+  }
+  .padding8 {
+    font-size: 20px;
+    padding-top: -4px;
+    padding-bottom: -4px;
+  }
+  .display1{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .cartochka1{
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 4px  rgba(0, 0, 0, 0.4);
+
+  }
+  h3{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 8px;
+  }
+  .grayback{
+    background-color: #048718;
+  }
+  ul.myul{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 28px;
+  }
+  .len1{
+    width: 140px;
+  }
+  .len2{
+    width: 100px;
+  }
+  .len3{
+    width: 22px;
+    margin-bottom: 20px;
+  }
