@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinkCalculator</title>
+    <link rel="stylesheet" href="PinkCalculator.css">
+</head>
+<body>
+    <div class="calculator">       
+        <div id="display" class="display"></div>
+        <div class="buttonsContainer11111">
+            <button onclick="appendToDisplay(7)" class="buttonWhite">7</button>
+            <button onclick="appendToDisplay(8)" class="buttonWhite">8</button>
+            <button onclick="appendToDisplay(9)" class="buttonWhite">9</button>
+            <button onclick="eraseLast(null)" class="buttonPink font48">EL</button>
+            <button onclick="eraseAll(null)" class="buttonPink font48">EA</button>
+            <button onclick="appendToDisplay(4)" class="buttonWhite">4</button>
+            <button onclick="appendToDisplay(5)" class="buttonWhite">5</button>
+            <button onclick="appendToDisplay(6)" class="buttonWhite">6</button>
+            <button onclick="appendToDisplay('+')" class="buttonPink">+</button>
+            <button onclick="appendToDisplay('-')" class="buttonPink">-</button>
+            <button onclick="appendToDisplay(1)" class="buttonWhite">1</button>
+            <button onclick="appendToDisplay(2)" class="buttonWhite">2</button>
+            <button onclick="appendToDisplay(3)" class="buttonWhite">3</button>
+            <button onclick="appendToDisplay('*')" class="buttonPink">*</button>
+            <button onclick="appendToDisplay('/')" class="buttonPink">/</button>
+        </div>
+        <div class="buttonsContainer1112">
+            <button onclick="appendToDisplay(0)" class="buttonWhite">0</button>
+            <button onclick="appendToDisplay('.')" class="buttonWhite">.</button>
+            <button onclick="showSecretImage()" class="buttonWhite">$</button>
+            <button onclick="calculate()" class="buttonPink">=</button>
+        </div>
+        <div id="secretImage" class="imageContainer hide"><img src="https://i.pinimg.com/736x/80/c1/e3/80c1e352cf033fbc258efcc88949c45e.jpg" width="100%"; height="100%"></div>
+        <audio id="secretSound" controls src="secretSound.mp3" class="hide"></audio>
+    </div>
+</body>
+<script src="PinkCalculator.js"></script>
