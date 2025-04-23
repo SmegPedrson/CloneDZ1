@@ -1,133 +1,162 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прикольная информация</title>
+    <title>test</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="work.js"></script>
 </head>
-
 <body>
-    <main>
-    <h2>Выставка интересных еженедельных работ из <a href="https://www.desmos.com" target="_blank"><img src="https://avatars.mds.yandex.net/i?id=e6dcf3f4bf1b959ab46359885e27cc32_sr-4615436-images-thumbs&n=13" alt="desmos" width="25" height="25"hspace="5"></a></h2>
-    <div class="display1">
-        <div class="cartochka1">
-            <div><h3>Невероятные графики с <a href="https://www.desmos.com/art" target="_blank">Art Expo 2024</a></h3></div>
-            <ul class="myul">
-                <li><a href="https://www.desmos.com/calculator/bkpsugnufn" target="_blank">“Pintograph” от HuiBeom Kim</a></li>
-                <li><a href="https://www.desmos.com/calculator/yclweenaqq" target="_blank">“Where the wind takes me” от Sofia Monarchi</a></li>
-                <li><a href="https://www.desmos.com/calculator/db1dkewi9x" target="_blank">“Desmos Snake” от Zane Fares</a></li>
-                <li><a href="https://www.desmos.com/3d/zgmsvhci9q?lang=ru" target="_blank">“Graphic Decay” от ronwnor</a></li>
-            </ul>
+        <div class="firstTitle">Выставка интересных еженедельных работ из <a href="https://www.desmos.com" target="_blank" style="color:white">Desmos</a> <!--<a href="https://www.desmos.com" target="_blank"><img src="https://avatars.mds.yandex.net/i?id=e6dcf3f4bf1b959ab46359885e27cc32_sr-4615436-images-thumbs&n=13" alt="desmos" width="25" height="25"hspace="5"></a> --></div>
+        <div class="display1">
+            <div class="cartochka1">
+                <div class="cartochka1Top" style="color:white;">Невероятные графики с <a href="https://www.desmos.com/art" target="_blank" style="color:white;">Art Expo 2024</a></div>
+                <div class="cartochka1Down">
+                    <ul class="ulLinks">
+                        <li><a href="https://www.desmos.com/calculator/bkpsugnufn" target="_blank">“Pintograph” от HuiBeom Kim</a></li>
+                        <li><a href="https://www.desmos.com/calculator/yclweenaqq" target="_blank">“Where the wind takes me” от Sofia Monarchi</a></li>
+                        <li><a href="https://www.desmos.com/calculator/db1dkewi9x" target="_blank">“Desmos Snake” от Zane Fares</a></li>
+                        <li><a href="https://www.desmos.com/3d/zgmsvhci9q?lang=ru" target="_blank">“Graphic Decay” от ronwnor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cartochka1">
+                <div class="cartochka1Top" style="color:white;">Графики посетителей</div>
+                <div class="cartochka1Down">
+                    <ul class="ulLinks">
+                        <li><a href="https://www.desmos.com/Calculator/vf5t7xvcfz" target="_blank">Клевер от kookooo22</a></li>
+                        <li><a href="https://www.desmos.com/3D/5jj8no6ena" target="_blank">Тыква от kookooo22</a></li>
+                        <li><a href="https://www.desmos.com/3D/w6ei9lalhh" target="_blank">Виноград от smeg_pedrson</a></li>
+                        <li><a href="https://www.desmos.com/3D/51qvuidizo" target="_blank">Прикольный узор от brpmath</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cartochka1" id="moveblContainer">
+                <div class="cartochka1Top" style="color:white;">Предложите свой собственный график</div>
+                <div class="cartochka1Down">
+                    <div style="padding: 20px">
+                        <form id="form">
+                            <div><input class="intput" type="text" id="intputName" placeholder="Введите ваш псевдоним..." required></div>
+                            <div><input class="intput" type="text" id="intputURL" placeholder="Введите вашу ссылку..." required></div>
+                            <div><button class="addNameURL" id="addNameURL" type="submit" style="width: 200px;">Добавить запрос</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
         </div>
-        <div class="cartochka1">
-            <h3>Мои глупенькие графики</h3>
-            <ul class="myul">
-                <li><a href="https://www.desmos.com/Calculator/vf5t7xvcfz" target="_blank">Клевер</a></li>
-                <li><a href="https://www.desmos.com/3D/5jj8no6ena" target="_blank">Тыква</a></li>
-                <li><a href="https://www.desmos.com/3D/w6ei9lalhh" target="_blank">Виноград</a></li>
-                <li><a href="https://www.desmos.com/3D/51qvuidizo" target="_blank">Прикольный узор</a></li>
-            </ul>
+        <div class="firstTitle">Интерактивный просмотр свойст числа </div>
+        <div style="display:grid;margin-bottom: 30px;">
+            <div class="numCalc">
+                <div class="calcTop">
+                    <input class="intputNum" type="number" id="intputNum" placeholder="Введите натуральное число..." style="margin-bottom: 0px;">
+                    <button class="addNameURL" id="calcNum" type="submit" style="height: 40px;width: 18%;" >Посчитать</button>
+                </div>
+                <div class="calcDown" id="calcDown">
+                    <div class="bottomMargin">Уникальных простых делителей ?</div>
+                    <div class="bottomMargin">Все делители: ?</div>
+                    <div class="bottomMargin">Количество обычных делителей ?</div>
+                    <div class="bottomMargin">Cумма цифр равна ?</div>
+                    <div>Произведение цифр равен ?</div>
+                </div>
+            </div>
         </div>
-
-    </div>   
-    <h2>Важные таблички</h2>
-    <div class="display1">
-        <div>
-            <table class="grayTable" >
-                <tr class="grayhe">
-                    <th>№</th>
-                    <th>Функция</th>
-                    <th>Производная</th>
-                </tr>
-                <tr class="graytr">
-                    <td>1</td>
-                    <td>\( \ C \)</td>
-                    <td>0</td>
-                </tr>
-                <tr class="graytr">
-                    <td>2</td>
-                    <td>\( \ kx + b \)</td>
-                    <td>\( \ k \)</td>
-                </tr>
-                <tr class="graytr">
-                    <td>3</td>
-                    <td>\( \ x^r \)</td>
-                    <td>\( \ r \cdot x^{r-1} \)</td>
-                </tr>
-                <tr class="graytr">
-                    <td>4</td>
-                    <td>\( \ q^x \)</td>
-                    <td>\( \ q^x \)</td>
-                </tr>
-                <tr class="graytr">
-                    <td>5</td>
-                    <td>\( \ a^x \)</td>
-                    <td>\( \ a^x \cdot \ln a \)</td>
-                </tr>
-                <tr class="graytr">
-                    <td>6</td>
-                    <td>\( \ ln x \)</td>
-                    <td><p class="padding8">\( \frac{1}{x} \)</p></td>
-                </tr>
-                <tr class="graytr">
-                    <td>7</td>
-                    <td>\( \ log_a x \)</td>
-                    <td><p class="padding8">\(  \frac{1}{x \cdot \ln a} \)</p></td>
-                </tr>
-                <tr class="graytr">
-                    <td>8</td>
-                    <td>\( \ sin x \)</td>
-                    <td>\( \ cos x \)</td>
-                </tr>
-                <tr class="graytr">
-                    <td>9</td>
-                    <td>\( \ cos x \)</td>
-                    <td>\( \ -sin x \)</td>
-                </tr>
-                <tr class="graytr">
-                    <td>10</td>
-                    <td>\(  \ tg x \)</td>
-                    <td><p class="padding8">\( \frac{1}{\cos^2 x} \)</p></td>
-                </tr>
-                <tr class="graytr">
-                    <td>11</td>
-                    <td>\( \ ctg x \)</td>
-                    <td><p class="padding8">\( -\frac{1}{\sin^2 x} \)</p></td>
-                </tr>
-                <tr class="graytr">
-                    <td>12</td>
-                    <td>\( \ arcsin x \)</td>
-                    <td><p class="padding8">\( \frac{1}{\sqrt{1-x^2}} \)</p></td>
-                </tr>
-                <tr class="graytr">
-                    <td>13</td>
-                    <td>\( \ arccos x \)</td>
-                    <td><p class="padding8">\( -\frac{1}{\sqrt{1-x^2}} \)</p></td>
-                </tr>
-                <tr class="graytr">
-                    <td>14</td>
-                    <td>\( \ arctg x \)</td>
-                    <td><p class="padding8">\( \frac{1}{\sqrt{1+x^2}} \)</p></td>
-                </tr>
-                <tr class="graytr">
-                    <td>15</td>
-                    <td>\( \ arctg x \)</td>
-                    <td><p class="padding8">\( -\frac{1}{\sqrt{1+x^2}} \)</p></td>
-                </tr>
-            </table>
-        </div>
-        <div>
-            <table class="grayTable">
-                <thead>
+        <div class="firstTitle">Справочныe материалы</div>
+        <div class="display1">
+            <div>
+                <table class="grayTable">
+                    <tr class="grayhe">
+                        <th>№</th>
+                        <th>Функция</th>
+                        <th>Производная</th>
+                    </tr>
+                    <tr class="graytr">
+                        <td>1</td>
+                        <td>\( C \)</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>2</td>
+                        <td>\( kx + b \)</td>
+                        <td>\( k \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>3</td>
+                        <td>\( x^r \)</td>
+                        <td>\( r \cdot x^{r-1} \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>4</td>
+                        <td>\( q^x \)</td>
+                        <td>\( q^x \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>5</td>
+                        <td>\( a^x \)</td>
+                        <td>\( a^x \cdot \ln a \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>6</td>
+                        <td>\( \ln x \)</td>
+                        <td>\( \frac{1}{x} \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>7</td>
+                        <td>\( \log_a x \)</td>
+                        <td>\( \frac{1}{x \cdot \ln a} \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>8</td>
+                        <td>\( \sin x \)</td>
+                        <td>\( \cos x \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>9</td>
+                        <td>\( \cos x \)</td>
+                        <td>\( -\sin x \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>10</td>
+                        <td>\( \tan x \)</td>
+                        <td>\( \frac{1}{\cos^2 x} \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>11</td>
+                        <td>\( \cot x \)</td>
+                        <td>\( -\frac{1}{\sin^2 x} \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>12</td>
+                        <td>\( \arcsin x \)</td>
+                        <td>\( \frac{1}{\sqrt{1-x^2}} \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>13</td>
+                        <td>\( \arccos x \)</td>
+                        <td>\( -\frac{1}{\sqrt{1-x^2}} \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>14</td>
+                        <td>\( \arctan x \)</td>
+                        <td>\( \frac{1}{1+x^2} \)</td>
+                    </tr>
+                    <tr class="graytr">
+                        <td>15</td>
+                        <td>\( arccot\) \(x \)</td>
+                        <td>\( -\frac{1}{1+x^2} \)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div>
+                <table class="grayTable">
                     <tr class="grayhe">
                         <th>№</th>
                         <th>Функция</th>
                         <th>Первообразная</th>
                     </tr>
-                </thead>
-                <tbody>
                     <tr class="graytr">
                         <td>1</td>
                         <td>\( 0 \)</td>
@@ -145,7 +174,7 @@
                     </tr>
                     <tr class="graytr">
                         <td>4</td>
-                        <td><p class="padding8">\( \frac{1}{x} \)</p></td>
+                        <td>\( \frac{1}{x} \)</td>
                         <td>\( \ln|x| + C \)</td>
                     </tr>
                     <tr class="graytr">
@@ -170,61 +199,99 @@
                     </tr>
                     <tr class="graytr">
                         <td>9</td>
-                        <td><p class="padding8">\( \frac{1}{\sin^2 x} \)</p></td>
-                        <td>\( -\operatorname{ctg}x + C \)</td>
+                        <td>\( \frac{1}{\sin^2 x} \)</td>
+                        <td>\( -\operatorname{cot}x + C \)</td>
                     </tr>
                     <tr class="graytr">
                         <td>10</td>
-                        <td><p class="padding8">\( \frac{1}{\cos^2 x} \)</p></td>
-                        <td>\( \ tg x + C \)</td>
+                        <td>\( \frac{1}{\cos^2 x} \)</td>
+                        <td>\( \tan x + C \)</td>
                     </tr>
                     <tr class="graytr">
                         <td>11</td>
-                        <td><p class="padding8">\( \frac{1}{\sqrt{a^2 - x^2}} \)</p></td>
+                        <td>\( \frac{1}{\sqrt{a^2 - x^2}} \)</td>
                         <td>\( \arcsin \frac{x}{a} + C \)</td>
                     </tr>
                     <tr class="graytr">
                         <td>12</td>
-                        <td><p class="padding8">\( \frac{1}{a^2 + x^2} \)</p></td>
-                        <td>\( \frac{1}{a} \ arctg \frac{x}{a} + C \)</td>
+                        <td>\( \frac{1}{a^2 + x^2} \)</td>
+                        <td>\( \frac{1}{a} \arctan \frac{x}{a} + C \)</td>
                     </tr>
                     <tr class="graytr">
                         <td>13</td>
-                        <td><p class="padding8">\( \frac{1}{x^2 - a^2} \)</p></td>
+                        <td>\( \frac{1}{x^2 - a^2} \)</td>
                         <td>\( \frac{1}{2a} \ln \left| \frac{x - a}{x + a} \right| + C \)</td>
                     </tr>
                     <tr class="graytr">
                         <td>14</td>
-                        <td><p class="padding8">\( \frac{1}{\sqrt{x^2 \pm a^2}} \)</p></td>
+                        <td>\( \frac{1}{\sqrt{x^2 \pm a^2}} \)</td>
                         <td>\( \ln|x + \sqrt{x^2 \pm a^2}| + C \)</td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    
-
-    <h2>Сообщите об ошибке или предложите дополнения к сайту</h2>
-    <form>
-        <p><textarea cols="84" rows="3" charswidth="23" name="mesengtxt"></textarea></p>
-        <div>
-            <div>
-            <label for="numberCard" >Номер банковской карты</label>
-            <input class="len1" type="number" id="numberCard" name="numberCard" required>
+                </table>
             </div>
-            <label for="DataCard" > Действительна до</label>
-            <input class="len2" type="date" id="DataCard" name="DataCard" required>
-            
-            <label for="CVV"> CVV/CVC</label>
-            <input class="len3" type="password" id="CVV" name="CVV" required>
+
+            <div>
+                <table class="grayTable">
+                    <thead>
+                        <tr class="grayhe">
+                            <th>№</th>
+                            <th>Функция</th>
+                            <th>Разложение в ряд Маклорена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="graytr">
+                            <td>1</td>
+                            <td>\( e^x \)</td>
+                            <td>\( 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots \)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>2</td>
+                            <td>\( \sin x \)</td>
+                            <td>\( x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>3</td>
+                            <td>\( \cos x \)</td>
+                            <td>\( 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>4</td>
+                            <td>\( sh \, x \)</td>
+                            <td>\( x + \frac{x^3}{3!} + \frac{x^5}{5!} + \frac{x^7}{7!} + \cdots \)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>5</td>
+                            <td>\( ch \, x \)</td>
+                            <td>\( 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!} + \cdots \)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>6</td>
+                            <td>\( (1 + x)^m \)</td>
+                            <td>\( 1 + \frac{m}{1!} x + \frac{m(m-1)}{2!} x^2 + \cdots \) (биномиальный ряд)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>7</td>
+                            <td>\( \frac{1}{1+x} \)</td>
+                            <td>\( 1 - x + x^2 - x^3 + x^4 - \cdots \)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>8</td>
+                            <td>\( \ln(1+x) \)</td>
+                            <td>\( x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots \)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>9</td>
+                            <td>\( \arctan x \)</td>
+                            <td>\( x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots \)</td>
+                        </tr>
+                        <tr class="graytr">
+                            <td>10</td>
+                            <td>\( \arcsin x \)</td>
+                            <td>\( x + \frac{1}{2} \cdot \frac{x^3}{3} + \frac{1 \cdot 3}{2 \cdot 4} \cdot \frac{x^5}{5} + \cdots \)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div>
-            <button type="submit">Отправить</button>
-        </div>
-    </form>
-</main>
-<footer> 
-    <p> 13.03.2025 Моя учебная веб-страница</p>
-</footer>
 </body>
-</html>
