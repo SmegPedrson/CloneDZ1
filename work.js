@@ -49,51 +49,44 @@ document.addEventListener('DOMContentLoaded', function() {
             calcDown.innerHTML = `<img src="https://get.wallhere.com/photo/1920x1200-px-baby-cat-cats-cute-kitten-kittens-1912229.jpg" width="760px"; height="475px">`
             return;
         }
-        
         let simplDelitels = []
-        let simplDelitel = 2;
+        let allDelitelsFirst = [ 1 ]
+        let allDelitelsSecond = [ cloneIntputValue ]
         let stepen = 0;
-        while(intputValue != 1){
-            if(intputValue % simplDelitel == 0){
-                intputValue = intputValue / simplDelitel
-                stepen++
-            }
-            else{
-                if(stepen != 0){
-                    if(stepen === 1){
-                        simplDelitels.push(simplDelitel)
-                    }else{
-                        const tempstring = `${simplDelitel}<sup>${stepen}</sup>`
-                        simplDelitels.push(tempstring)
-                    }
+
+        const maxsimplDelitel = Math.ceil(Math.sqrt(cloneIntputValue))
+
+        for(let simplDelitel = 2;simplDelitel <= maxsimplDelitel;simplDelitel++){
+            if(cloneIntputValue % simplDelitel == 0){
+                while(intputValue % simplDelitel == 0){
+                    intputValue /= simplDelitel
+                    stepen++
+                }
+                if(stepen>0){
+                    if(stepen === 1){simplDelitels.push(simplDelitel)}
+                    else {simplDelitels.push(`${simplDelitel}<sup>${stepen}</sup>`)}
                     stepen = 0
                 }
-                simplDelitel++
+                allDelitelsFirst.push(simplDelitel)
+                allDelitelsSecond.push(cloneIntputValue/simplDelitel)
             }
         }
-        if(stepen === 1){
-            simplDelitels.push(simplDelitel)
-        }else if (stepen>1){
-            const tempstring = `${simplDelitel}<sup>${stepen}</sup>`
-            simplDelitels.push(tempstring)
+        if(simplDelitels.length == 0){
+            simplDelitels.push(cloneIntputValue)
         }
-        const stringSimplDelitels = `${cloneIntputValue} = ` + simplDelitels.toString().replace(/,(?=[^\s])/g, "·")
+        else if(allDelitelsFirst[allDelitelsFirst.length-1] == allDelitelsSecond[allDelitelsSecond.length -1]){
+            allDelitelsFirst.pop()
+        }
+        else if(allDelitelsFirst[allDelitelsFirst.length-1] == allDelitelsSecond[allDelitelsSecond.length -2] && allDelitelsFirst[allDelitelsFirst.length-2] == allDelitelsSecond[allDelitelsSecond.length -1] ){
+            allDelitelsFirst.pop()
+            allDelitelsFirst.pop()
+            //смотреть 42 без этого модуя (:<) очень некрасивая проверка из-за того что мы берём округлённый вправо корень числа
+            //интуиция подсказывает что не может быть более 2 пар повотрения -> проверь
+        }
 
-        simplDelitel = 1;
-        let delitelsfirst = []
-        let delitelssecond = []
-        while(simplDelitel <= Math.sqrt(cloneIntputValue)){
-            if(cloneIntputValue % simplDelitel === 0){
-                const secondNum = cloneIntputValue/simplDelitel
-                if(secondNum != simplDelitel){
-                    delitelssecond.push(secondNum)
-                }
-                delitelsfirst.push(simplDelitel)
-            }
-            simplDelitel++;
-        }
-        delitelsfirst = delitelsfirst.concat(delitelssecond.reverse())
-        const stringAllDelitls = 'Все делители: '+ delitelsfirst.toString().replace(/,(?=[^\s])/g, ", ")
+        const stringSimplDelitels = `${cloneIntputValue} = ` + simplDelitels.toString().replace(/,(?=[^\s])/g, "·")
+        const stringallDelitels = 'Все делители: ' + allDelitelsFirst.toString().replace(/,(?=[^\s])/g, ", ") +", "+ allDelitelsSecond.reverse().toString().replace(/,(?=[^\s])/g, ", ")
+        const numDelitels = allDelitelsFirst.length+allDelitelsSecond.length
 
         intputValue = cloneIntputValue
         let sumВigits = 0;
@@ -107,9 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         calcDown.innerHTML = `<div class="bottomMargin">${stringSimplDelitels}</div>
         <div class="bottomMargin">Уникальных простых делителей ${simplDelitels.length}</div>
-        <div class="bottomMargin">${stringAllDelitls}</div>
-        <div class="bottomMargin">Количество обычных делителей ${delitelsfirst.length}</div>
+        <div class="bottomMargin">${stringallDelitels}</div>
+        <div class="bottomMargin">Количество обычных делителей ${numDelitels}</div>
         <div class="bottomMargin">Cумма цифр равна ${sumВigits}</div>
-        <div>Произведение цифр равна ${multiDigits}</div>`
+        <div>Произведение цифр равно ${multiDigits}</div>`
     })
 })
