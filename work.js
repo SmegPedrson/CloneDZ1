@@ -77,13 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
         else if(allDelitelsFirst[allDelitelsFirst.length-1] == allDelitelsSecond[allDelitelsSecond.length -1]){
             allDelitelsFirst.pop()
         }
-        else if(allDelitelsFirst[allDelitelsFirst.length-1] == allDelitelsSecond[allDelitelsSecond.length -2] && allDelitelsFirst[allDelitelsFirst.length-2] == allDelitelsSecond[allDelitelsSecond.length -1] ){
+        else if(allDelitelsFirst[allDelitelsFirst.length-1] == allDelitelsSecond[allDelitelsSecond.length -2]){
             allDelitelsFirst.pop()
             allDelitelsFirst.pop()
-            //смотреть 42 без этого модуя (:<) очень некрасивая проверка из-за того что мы берём округлённый вправо корень числа
-            //интуиция подсказывает что не может быть более 2 пар повотрения -> проверь
         }
-
+        if(intputValue != 1){simplDelitels.push(intputValue)}//конфликтов с 74 строкой нет
+        //на самомо деле 84 строка была всегда, просто моя кошка её удалила
         const stringSimplDelitels = `${cloneIntputValue} = ` + simplDelitels.toString().replace(/,(?=[^\s])/g, "·")
         const stringallDelitels = 'Все делители: ' + allDelitelsFirst.toString().replace(/,(?=[^\s])/g, ", ") +", "+ allDelitelsSecond.reverse().toString().replace(/,(?=[^\s])/g, ", ")
         const numDelitels = allDelitelsFirst.length+allDelitelsSecond.length
